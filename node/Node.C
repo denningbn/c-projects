@@ -28,7 +28,7 @@ Node * insert(Node_t * node, int val)
 {
 	if (node == NULL)
 	{
-		Node_t * node = (Node_t *) malloc(sizeof(Node_t));
+		node = (Node_t *) malloc(sizeof(Node_t));
 
 		if (node == NULL)
 		{
@@ -37,10 +37,13 @@ Node * insert(Node_t * node, int val)
 		}
 
 		node->val = val;
+	
+		return node;
 	}
 	else
 	{
 		node->next = insert(node->next, val);
+		return node;
 	}
 }
 
@@ -60,9 +63,8 @@ int main()
 	Node_t * first = insert(NULL, 1);
 
 	insert(first,2);
-	insert(first,2);
-	insert(first,2);
-	insert(first,2);
+	insert(first,3);
+	insert(first,4);
 
 	printNode(first);
 
