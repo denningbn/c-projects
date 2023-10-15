@@ -2,6 +2,10 @@
 #include <stdlib.h>
 
 
+//Hello! This is my version of Nodes in C. I had a class a few semesters ago where we were writing a bunch of data structures out in java and figured it would be fun to that in C, especially since it's been a long time since I had to do some real programming.
+//This is an unordered linked list that uses integers as the value. I'll probably use this for a hash table later on.
+//
+
 struct Node {
 	int val;
 	struct Node * next;
@@ -59,12 +63,12 @@ void freeAll(Node_t * node)
 
 int main()
 {
+	Node_t * first = (Node_t *) malloc(sizeof(Node_t));
+	first->val=0;
 	
-	Node_t * first = insert(NULL, 1);
-
-	insert(first,2);
-	insert(first,3);
-	insert(first,4);
+	insert(first, 1);
+	insert(first, 2);
+	insert(first, 3);
 
 	printNode(first);
 
